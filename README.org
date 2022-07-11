@@ -1,0 +1,49 @@
+#+title: Team 1
+
+* TABLE OF CONTENTS :toc:
+- [[#etherpad-link][ETHERPAD LINK]]
+- [[#team-members][TEAM MEMBERS]]
+- [[#skills][SKILLS]]
+- [[#steps-to-solve-the-problem][STEPS TO SOLVE THE PROBLEM]]
+  - [[#data-loading][DATA LOADING]]
+  - [[#data-cleaning][DATA CLEANING]]
+  - [[#visualization][VISUALIZATION]]
+
+* ETHERPAD LINK
+
+https://etherpad.lib.unideb.hu/p/DALICO_Group_1
+
+* TEAM MEMBERS
+=Thich - Economist[1], Shubham - IT[2], Carlos - IT[3]=
+
+* SKILLS
+Data Management+--
+Data Collection+--
+Ethics++-
+Data Visualization+++
+Data Analysis+++
+
+Storytelling+--
+Research Strategies+++
+
+Machine Learning-++
+
+Deep Learning-++
+
+Feature Engineering-++
+
+Problem Solving-++
+
+* STEPS TO SOLVE THE PROBLEM
+** DATA LOADING
+First we have to import the movies and select the ones between =2000 - 2009=:
+#+begin_src python
+#Libraries
+import pandas as pd
+
+#Loading movies.dat into df_movies_raw
+df_movies_raw = pd.read_csv("movies.dat", sep="::", engine='python')
+#+end_src
+Then we need to
+** DATA CLEANING
+** VISUALIZATION
