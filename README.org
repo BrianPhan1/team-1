@@ -12,8 +12,8 @@
 
 * ETHERPAD LINKS
 
-https://etherpad.lib.unideb.hu/p/DALICO_Summer_School_2022
-https://etherpad.lib.unideb.hu/p/DALICO_Group_1
++ https://etherpad.lib.unideb.hu/p/DALICO_Summer_School_2022
++ https://etherpad.lib.unideb.hu/p/DALICO_Group_1
 
 * TEAM MEMBERS
 =Thich - Economist[1], Shubham - IT[2], Carlos - IT[3]=
