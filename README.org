@@ -1,16 +1,18 @@
 #+title: Team 1
 
 * TABLE OF CONTENTS :toc:
-- [[#etherpad-link][ETHERPAD LINK]]
+- [[#etherpad-links][ETHERPAD LINKS]]
 - [[#team-members][TEAM MEMBERS]]
 - [[#skills][SKILLS]]
 - [[#steps-to-solve-the-problem][STEPS TO SOLVE THE PROBLEM]]
   - [[#data-loading][DATA LOADING]]
+  - [[#info-about-general-dataset][INFO ABOUT GENERAL DATASET]]
   - [[#data-cleaning][DATA CLEANING]]
   - [[#visualization][VISUALIZATION]]
 
-* ETHERPAD LINK
+* ETHERPAD LINKS
 
+https://etherpad.lib.unideb.hu/p/DALICO_Summer_School_2022
 https://etherpad.lib.unideb.hu/p/DALICO_Group_1
 
 * TEAM MEMBERS
@@ -36,12 +38,45 @@ First we have to import the movies and select the ones between =2000 - 2009=:
 #Libraries
 import pandas as pd
 
-#Loading movies.dat into df_movies_raw
-df_movies_raw = pd.read_csv("movies.dat", sep="::", engine='python', header=None)
+#Loading the .dat files
+movies = pd.read_csv("movies.dat", sep="::", names=['MovieID', 'Title', 'Genres'])
+ratings = pd.read_csv("ratings.dat", sep="::", names=['UserID', 'MovieID', 'Rating', 'Timestamp'])
+tags = pd.read_csv("tags.dat", sep="::", names=['UserID', 'MovieID', 'Tag', 'Timestamp'])
 #+end_src
-Then we need to filter the movies by it's year.
+We convert the Timestamps to a datetime format.
 #+begin_src python
-
+ratings["Timestamp"] = pd.to_datetime(ratings["Timestamp"], unit='s')
+tags["Timestamp"] = pd.to_datetime(tags["Timestamp"], unit='s')
 #+end_src
+** INFO ABOUT GENERAL DATASET
+*** Is there a movie with a rating of 0 in the dataset?
+Let's take a closer look at the ratings.
+#+begin_src python
+ratings['Rating'].value_counts()
+#+end_src
+Output:
+4.0    2875850
+3.0    2356676
+5.0    1544812
+3.5     879764
+2.0     790306
+4.5     585022
+1.0     384180
+2.5     370178
+1.5     118278
+0.5      94988
+Name: Rating, dtype: int64
+
+As we can see, there is not a 0 rating in the dataset.
+
+*** Make a plot that represents the distribution of the ratings!
+Let's see...
+#+begin_src python
+ratings['Rating'].hist(bins=10)
+#+end_src
+Output:
+#+CAPTION: Ratings histogram
+#+NAME:   Fig 1
+[[./img/hist.png]]
 ** DATA CLEANING
 ** VISUALIZATION
