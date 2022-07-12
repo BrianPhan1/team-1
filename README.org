@@ -1,4 +1,4 @@
-#+title: Team 1
+#+title: TEAM 1
 
 * TABLE OF CONTENTS :toc:
 - [[#etherpad-links][ETHERPAD LINKS]]
