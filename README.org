@@ -17,22 +17,17 @@ https://etherpad.lib.unideb.hu/p/DALICO_Group_1
 =Thich - Economist[1], Shubham - IT[2], Carlos - IT[3]=
 
 * SKILLS
-Data Management+--
-Data Collection+--
-Ethics++-
-Data Visualization+++
-Data Analysis+++
-
-Storytelling+--
-Research Strategies+++
-
-Machine Learning-++
-
-Deep Learning-++
-
-Feature Engineering-++
-
-Problem Solving-++
++ Data Management+--
++ Data Collection+--
++ Ethics++-
++ Data Visualization+++
++ Data Analysis+++
++ Storytelling+--
++ Research Strategies+++
++ Machine Learning-++
++ Deep Learning-++
++ Feature Engineering-++
++ Problem Solving-++
 
 * STEPS TO SOLVE THE PROBLEM
 ** DATA LOADING
@@ -42,8 +37,11 @@ First we have to import the movies and select the ones between =2000 - 2009=:
 import pandas as pd
 
 #Loading movies.dat into df_movies_raw
-df_movies_raw = pd.read_csv("movies.dat", sep="::", engine='python')
+df_movies_raw = pd.read_csv("movies.dat", sep="::", engine='python', header=None)
 #+end_src
-Then we need to
+Then we need to filter the movies by it's year.
+#+begin_src python
+
+#+end_src
 ** DATA CLEANING
 ** VISUALIZATION
