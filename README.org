@@ -16,20 +16,20 @@
 + https://etherpad.lib.unideb.hu/p/DALICO_Group_1
 
 * TEAM MEMBERS
-=Thich - Economist[1], Shubham - IT[2], Carlos - IT[3]=
+=Thich - Economist[1], Carlos - IT[2]=
 
 * SKILLS
-+ Data Management+--
-+ Data Collection+--
-+ Ethics++-
-+ Data Visualization+++
-+ Data Analysis+++
-+ Storytelling+--
-+ Research Strategies+++
-+ Machine Learning-++
-+ Deep Learning-++
-+ Feature Engineering-++
-+ Problem Solving-++
++ Data Management++
++ Data Collection+-
++ Ethics+-
++ Data Visualization++
++ Data Analysis++
++ Storytelling+-
++ Research Strategies++
++ Machine Learning-+
++ Deep Learning-+
++ Feature Engineering-+
++ Problem Solving-+
 
 * STEPS TO SOLVE THE PROBLEM
 ** DATA LOADING
