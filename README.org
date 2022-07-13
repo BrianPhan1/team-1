@@ -107,6 +107,7 @@ We count the ratings from =2000 - 2009=:
 movies_rating['Rating'].value_counts()
 #+end_src
 #+begin_example
+Output:
 4.0    491426
 3.0    334720
 3.5    302917
