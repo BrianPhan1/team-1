@@ -81,7 +81,7 @@ Output:
 #+NAME:   Fig 1
 [[./img/hist.png]]
 ** INFO ABOUT SPECIFIC DECADE =2000 - 2009=
-We first need to merge our data, the movie dataframe and ratings dataframe:
+We first need to merge our data, the movies dataframe and ratings dataframe:
 #+begin_src python
 movies_rating = (ratings.set_index("MovieID").join(movies.set_index("MovieID"),how="inner"))
 movies_rating.reset_index(inplace=True)
@@ -94,6 +94,7 @@ Then we need to extract the Year and Name of the movies from the Title column:
 movies_rating["Year"] = movies_rating["Title"].str[-5:-1]
 movies_rating["Title"] = movies_rating["Title"].str[:-7]
 #+end_src
+[[./img/table3.png]]
 In order to filter our data we need to make our fresh Year column numeric:
 #+begin_src python
 movies_rating['Year'] = pd.to_numeric(movies_rating['Year'], downcast = 'integer')
