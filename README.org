@@ -127,6 +127,7 @@ Then we take a look to the histogram:
 #+begin_src python
 movies_rating['Rating'].hist(bins=10)
 #+end_src
+Output:
 #+CAPTION: 2000 - 2009 Ratings Hist
 #+NAME: Fig 2
 [[./img/hist2.png]]
