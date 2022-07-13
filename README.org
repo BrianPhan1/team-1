@@ -119,6 +119,14 @@ movies_rating['Rating'].value_counts()
 0.5     32197
 Name: Rating, dtype: int64
 #+end_example
+Then we take a look to the histogram:
+#+begin_src python
+movies_rating['Rating'].hist(bins=10)
+#+end_src
+#+CAPTION: 2000 - 2009 Ratings Hist
+#+NAME: Fig 2
+[[./img/hist2.png]]
+
 ** GENRE PROCESSING
 The genre column needs to be encoded so that information can become useful:
 #+begin_src python
