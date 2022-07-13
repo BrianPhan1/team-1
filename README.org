@@ -8,6 +8,7 @@
   - [[#data-loading][DATA LOADING]]
   - [[#info-about-general-dataset][INFO ABOUT GENERAL DATASET]]
   - [[#info-about-specific-decade-2000---2009][INFO ABOUT SPECIFIC DECADE =2000 - 2009=]]
+  - [[#genre-processing][GENRE PROCESSING]]
 
 * ETHERPAD LINKS
 
@@ -87,3 +88,26 @@ movies_rating.reset_index(inplace=True)
 #+CAPTION: Merged DataFrame
 #+NAME: Table 1
 [[./img/table1.png]]
+Then we need to extract the Year and Name of the movies from the Title column:
+#+begin_src python
+movies_rating["Year"] = movies_rating["Title"].str[-5:-1]
+movies_rating["Title"] = movies_rating["Title"].str[:-7]
+#+end_src
+In order to filter our data we need to make our fresh Year column numeric:
+#+begin_src python
+movies_rating['Year'] = pd.to_numeric(movies_rating['Year'], downcast = 'integer')
+#+end_src
+The we move forward to filter our data:
+#+begin_src python
+movies_rating = movies_rating.query("Year >= 2000")
+movies_rating = movies_rating.query("Year <= 2009")
+#+end_src
+** GENRE PROCESSING
+The genre column needs to be encoded so that information can become useful:
+#+begin_src python
+dummies = movies_rating['Genres'].str.get_dummies()
+data = (pd.concat([movies_rating, dummies], axis=1).drop(["Genres"], axis=1))
+#+end_src
+#+CAPTION: Dummies
+#+NAME: Table 2
+[[./img/table2.png]]
