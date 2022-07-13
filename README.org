@@ -7,8 +7,7 @@
 - [[#steps-to-solve-the-problem][STEPS TO SOLVE THE PROBLEM]]
   - [[#data-loading][DATA LOADING]]
   - [[#info-about-general-dataset][INFO ABOUT GENERAL DATASET]]
-  - [[#data-cleaning][DATA CLEANING]]
-  - [[#visualization][VISUALIZATION]]
+  - [[#info-about-specific-decade-2000---2009][INFO ABOUT SPECIFIC DECADE =2000 - 2009=]]
 
 * ETHERPAD LINKS
 
@@ -33,7 +32,7 @@
 
 * STEPS TO SOLVE THE PROBLEM
 ** DATA LOADING
-First we have to import the movies and select the ones between =2000 - 2009=:
+First we have to import the .dat files:
 #+begin_src python
 #Libraries
 import pandas as pd
@@ -79,5 +78,12 @@ Output:
 #+CAPTION: Ratings histogram
 #+NAME:   Fig 1
 [[./img/hist.png]]
-** DATA CLEANING
-** VISUALIZATION
+** INFO ABOUT SPECIFIC DECADE =2000 - 2009=
+We first need to merge our data, the movie dataframe and ratings dataframe:
+#+begin_src python
+movies_rating = (ratings.set_index("MovieID").join(movies.set_index("MovieID"),how="inner"))
+movies_rating.reset_index(inplace=True)
+#+end_src
+#+CAPTION: Merged DataFrame
+#+NAME: Table 1
+[[./img/table1.png]]
