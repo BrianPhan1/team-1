@@ -95,6 +95,7 @@ movies_rating["Year"] = movies_rating["Title"].str[-5:-1]
 movies_rating["Title"] = movies_rating["Title"].str[:-7]
 #+end_src
 [[./img/table3.png]]
+
 In order to filter our data we need to make our fresh Year column numeric:
 #+begin_src python
 movies_rating['Year'] = pd.to_numeric(movies_rating['Year'], downcast = 'integer')
