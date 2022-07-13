@@ -54,6 +54,7 @@ Let's take a closer look at the ratings.
 #+begin_src python
 ratings['Rating'].value_counts()
 #+end_src
+#+begin_example
 Output:
 4.0    2875850
 3.0    2356676
@@ -66,7 +67,7 @@ Output:
 1.5     118278
 0.5      94988
 Name: Rating, dtype: int64
-
+#+end_example
 As we can see, there is not a 0 rating in the dataset.
 
 *** Make a plot that represents the distribution of the ratings!
